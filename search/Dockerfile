@@ -1,0 +1,3 @@
+FROM getmeili/meilisearch:v1.41.0@sha256:860fa4baed04ae1c235de870edab0c8006227546dea1bbb6411fbfc5e27cf1db
+
+USER 1000:1000

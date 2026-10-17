@@ -1,0 +1,20 @@
+#!/bin/sh
+# The web server and the workers share the SQLite databases, so they run side by side here, and
+# either one exiting stops both: the pod restarts rather than serving half of karakeep.
+set -u
+
+(cd /app/apps/web && exec node server.js) &
+web=$!
+(cd /app/apps/workers && exec node dist/index.js) &
+workers=$!
+
+stop() { kill -TERM "$web" "$workers" 2>/dev/null; }
+trap 'stop; wait; exit 0' TERM INT
+
+while kill -0 "$web" 2>/dev/null && kill -0 "$workers" 2>/dev/null; do
+  sleep 2
+done
+echo "karakeep-serve: a process exited; stopping the other" >&2
+stop
+wait
+exit 1

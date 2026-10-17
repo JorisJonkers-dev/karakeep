@@ -1,0 +1,22 @@
+# Both SQLite databases stream to Garage; karakeep-start restores them before karakeep opens them.
+dbs:
+  - path: ${DATA_DIR}/db.db
+    replica:
+      type: s3
+      bucket: ${KARAKEEP_LITESTREAM_BUCKET}
+      path: db.db
+      endpoint: ${KARAKEEP_S3_ENDPOINT}
+      region: ${KARAKEEP_S3_REGION}
+      force-path-style: true
+      access-key-id: ${KARAKEEP_S3_ACCESS_KEY_ID}
+      secret-access-key: ${KARAKEEP_S3_SECRET_ACCESS_KEY}
+  - path: ${DATA_DIR}/queue.db
+    replica:
+      type: s3
+      bucket: ${KARAKEEP_LITESTREAM_BUCKET}
+      path: queue.db
+      endpoint: ${KARAKEEP_S3_ENDPOINT}
+      region: ${KARAKEEP_S3_REGION}
+      force-path-style: true
+      access-key-id: ${KARAKEEP_S3_ACCESS_KEY_ID}
+      secret-access-key: ${KARAKEEP_S3_SECRET_ACCESS_KEY}

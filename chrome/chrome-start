@@ -1,0 +1,8 @@
+#!/bin/sh
+# Upstream's run.sh with the flags the old path passed as arguments, which the Project cannot.
+exec /headless-shell/run.sh \
+  --disable-gpu \
+  --disable-dev-shm-usage \
+  --hide-scrollbars \
+  --disable-blink-features=AutomationControlled \
+  --window-size=1440,900

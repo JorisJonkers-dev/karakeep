@@ -1,0 +1,39 @@
+#!/bin/sh
+# Restores both SQLite databases from Garage, migrates, then serves karakeep under Litestream,
+# which streams every write back. Assets go straight to Garage through karakeep's S3 store, so
+# DATA_DIR holds nothing a restart cannot rebuild.
+set -eu
+
+for var in DATA_DIR KARAKEEP_S3_ENDPOINT KARAKEEP_S3_REGION KARAKEEP_S3_KEY_HEX KARAKEEP_S3_SECRET_ACCESS_KEY \
+  KARAKEEP_LITESTREAM_BUCKET ASSET_STORE_S3_BUCKET; do
+  eval "value=\${$var:-}"
+  [ -n "$value" ] || { echo "karakeep-start: $var is not set" >&2; exit 1; }
+done
+
+# Garage's key id is GK and 24 hex digits: the first 24 of the generated key.
+KARAKEEP_S3_ACCESS_KEY_ID="GK$(printf '%s' "$KARAKEEP_S3_KEY_HEX" | cut -c1-24)"
+export KARAKEEP_S3_ACCESS_KEY_ID
+export ASSET_STORE_S3_ENDPOINT="$KARAKEEP_S3_ENDPOINT"
+export ASSET_STORE_S3_REGION="$KARAKEEP_S3_REGION"
+export ASSET_STORE_S3_ACCESS_KEY_ID="$KARAKEEP_S3_ACCESS_KEY_ID"
+export ASSET_STORE_S3_SECRET_ACCESS_KEY="$KARAKEEP_S3_SECRET_ACCESS_KEY"
+export ASSET_STORE_S3_FORCE_PATH_STYLE=true
+# The estate delivers a host and a port as separate values.
+if [ -n "${KARAKEEP_SEARCH_HOST:-}" ]; then
+  export MEILI_ADDR="http://${KARAKEEP_SEARCH_HOST}:${KARAKEEP_SEARCH_PORT:?}"
+fi
+if [ -n "${KARAKEEP_CHROME_HOST:-}" ]; then
+  export BROWSER_WEB_URL="http://${KARAKEEP_CHROME_HOST}:${KARAKEEP_CHROME_PORT:?}"
+fi
+# Litestream needs WAL; karakeep otherwise forces journal_mode=DELETE on every connection.
+export DB_WAL_MODE=true
+
+mkdir -p "$DATA_DIR"
+for db in db.db queue.db; do
+  litestream restore -config /etc/litestream.yml -if-db-not-exists -if-replica-exists "$DATA_DIR/$db"
+done
+
+echo "karakeep-start: running the database migrations"
+(cd /db_migrations && node index.js)
+
+exec litestream replicate -config /etc/litestream.yml -exec /usr/local/bin/karakeep-serve
