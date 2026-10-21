@@ -1,5 +1,12 @@
 # Changelog
 
+## [1.1.0](https://github.com/JorisJonkers-dev/karakeep/compare/v1.0.1...v1.1.0) (2026-10-21)
+
+
+### Features
+
+* the images lock records each image's upstream version, and an upstream bump releases ([#10](https://github.com/JorisJonkers-dev/karakeep/issues/10)) ([40a1ebd](https://github.com/JorisJonkers-dev/karakeep/commit/40a1ebd1024fb2fa5638e83212df54129aa88500))
+
 ## [1.0.1](https://github.com/JorisJonkers-dev/karakeep/compare/v1.0.0...v1.0.1) (2026-10-18)
 
 
