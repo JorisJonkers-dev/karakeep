@@ -1,5 +1,12 @@
 # Changelog
 
+## [1.1.1](https://github.com/JorisJonkers-dev/karakeep/compare/v1.1.0...v1.1.1) (2026-10-21)
+
+
+### Miscellaneous Chores
+
+* Renovate alone updates dependencies, so Dependabot's fallback goes ([#15](https://github.com/JorisJonkers-dev/karakeep/issues/15)) ([d9771c3](https://github.com/JorisJonkers-dev/karakeep/commit/d9771c32ed0ef6f0ee4028d1d28b9e4b262618ce))
+
 ## [1.1.0](https://github.com/JorisJonkers-dev/karakeep/compare/v1.0.1...v1.1.0) (2026-10-21)
 
 
