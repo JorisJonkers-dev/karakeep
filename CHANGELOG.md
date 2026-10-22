@@ -1,5 +1,12 @@
 # Changelog
 
+## [1.1.2](https://github.com/JorisJonkers-dev/karakeep/compare/v1.1.1...v1.1.2) (2026-10-22)
+
+
+### Bug Fixes
+
+* meilisearch upgrades its index on start, so a version bump no longer crash-loops it ([#18](https://github.com/JorisJonkers-dev/karakeep/issues/18)) ([f5dc0b3](https://github.com/JorisJonkers-dev/karakeep/commit/f5dc0b3c2d727b0f68a6c886dac9cde8c5248404))
+
 ## [1.1.1](https://github.com/JorisJonkers-dev/karakeep/compare/v1.1.0...v1.1.1) (2026-10-21)
 
 
