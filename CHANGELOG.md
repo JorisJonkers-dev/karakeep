@@ -1,5 +1,12 @@
 # Changelog
 
+## [1.1.4](https://github.com/JorisJonkers-dev/karakeep/compare/v1.1.3...v1.1.4) (2026-11-01)
+
+
+### Bug Fixes
+
+* **deploy:** size karakeep and its search to what they use, and move the index off the cordoned Pi ([#27](https://github.com/JorisJonkers-dev/karakeep/issues/27)) ([681b8a2](https://github.com/JorisJonkers-dev/karakeep/commit/681b8a265e896f802a5cb2537114e552d7a99663))
+
 ## [1.1.3](https://github.com/JorisJonkers-dev/karakeep/compare/v1.1.2...v1.1.3) (2026-11-01)
 
 
