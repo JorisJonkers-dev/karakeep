@@ -71,8 +71,9 @@ applications:
         provides:
           cdp: 9222
         placement:
-          memory: 2Gi
-          cpu: 1000m
+          # Idle near 40Mi and 0.01 CPU; the headroom is for rendering a page.
+          memory: 1Gi
+          cpu: 100m
         writablePaths: [/tmp]
         probes:
           readiness: { tcp: 9222 }
