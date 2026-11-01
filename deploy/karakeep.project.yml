@@ -50,8 +50,9 @@ applications:
             delivery: env
             rotation: { tolerates: restart }
         placement:
-          memory: 2Gi
-          cpu: 1000m
+          # 372Mi and 0.02 CPU in use; request equals limit, so this is the ceiling too.
+          memory: 1Gi
+          cpu: 100m
           arch: [amd64] # karakeep's image is published for amd64 only
         # The restored databases, and the workers' downloads.
         writablePaths: [/data, /tmp]
@@ -96,8 +97,8 @@ applications:
             delivery: env
             rotation: { tolerates: restart }
         placement:
-          memory: 1Gi
-          cpu: 500m
+          memory: 512Mi # 14Mi in use
+          cpu: 100m
         writablePaths: [/tmp]
         probes:
           readiness: { path: /health, port: 7700 }
@@ -105,7 +106,8 @@ applications:
         startupBudget: 150s
         cutover: interrupted # one pod on a ReadWriteOnce index
         volumes:
-          - claim: search-data
+          # A new claim: search-data is bound to a cordoned Pi, and the index is rebuilt here.
+          - claim: search-index
             mountAt: /meili_data
             size: 20Gi
             durability: reconstructible # karakeep reindexes every bookmark into it
