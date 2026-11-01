@@ -1,5 +1,12 @@
 # Changelog
 
+## [1.1.3](https://github.com/JorisJonkers-dev/karakeep/compare/v1.1.2...v1.1.3) (2026-11-01)
+
+
+### Bug Fixes
+
+* **deploy:** request what karakeep-chrome uses, so it schedules beside the datastores ([#25](https://github.com/JorisJonkers-dev/karakeep/issues/25)) ([1a3fd23](https://github.com/JorisJonkers-dev/karakeep/commit/1a3fd2315131266e4e875aa0caf2df0b3d849688))
+
 ## [1.1.2](https://github.com/JorisJonkers-dev/karakeep/compare/v1.1.1...v1.1.2) (2026-10-22)
 
 
