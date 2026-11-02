@@ -97,7 +97,7 @@ applications:
             delivery: env
             rotation: { tolerates: restart }
         placement:
-          memory: 512Mi # 14Mi in use
+          memory: 256Mi # peaked at 19Mi over 14 days (2026-11-02)
           cpu: 100m
         writablePaths: [/tmp]
         probes:
