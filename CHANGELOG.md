@@ -1,5 +1,12 @@
 # Changelog
 
+## [1.1.5](https://github.com/JorisJonkers-dev/karakeep/compare/v1.1.4...v1.1.5) (2026-11-02)
+
+
+### Bug Fixes
+
+* **deploy:** reserve what karakeep-search uses ([#29](https://github.com/JorisJonkers-dev/karakeep/issues/29)) ([95c5211](https://github.com/JorisJonkers-dev/karakeep/commit/95c52113fe195006603cf733fc2bd19fdf3db5f8))
+
 ## [1.1.4](https://github.com/JorisJonkers-dev/karakeep/compare/v1.1.3...v1.1.4) (2026-11-01)
 
 
