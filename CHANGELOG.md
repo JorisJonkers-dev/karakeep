@@ -1,5 +1,13 @@
 # Changelog
 
+## [1.1.6](https://github.com/JorisJonkers-dev/karakeep/compare/v1.1.5...v1.1.6) (2026-11-10)
+
+
+### Bug Fixes
+
+* **deps:** update getmeili/meilisearch docker tag to v1.56.0 ([#32](https://github.com/JorisJonkers-dev/karakeep/issues/32)) ([ee1e440](https://github.com/JorisJonkers-dev/karakeep/commit/ee1e440d54ce02692ea301ed859a99644889d96e))
+* **deps:** update getmeili/meilisearch docker tag to v1.56.1 ([#37](https://github.com/JorisJonkers-dev/karakeep/issues/37)) ([9d42a2c](https://github.com/JorisJonkers-dev/karakeep/commit/9d42a2c07e1045d93127b763b999f9a366ecec4e))
+
 ## [1.1.5](https://github.com/JorisJonkers-dev/karakeep/compare/v1.1.4...v1.1.5) (2026-11-02)
 
 
