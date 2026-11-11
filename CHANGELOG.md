@@ -1,5 +1,12 @@
 # Changelog
 
+## [1.1.7](https://github.com/JorisJonkers-dev/karakeep/compare/v1.1.6...v1.1.7) (2026-11-11)
+
+
+### Bug Fixes
+
+* **deps:** update litestream/litestream docker tag to v0.5.18 ([#39](https://github.com/JorisJonkers-dev/karakeep/issues/39)) ([ab71dab](https://github.com/JorisJonkers-dev/karakeep/commit/ab71dab922142021a4d304853b718737aeff5451))
+
 ## [1.1.6](https://github.com/JorisJonkers-dev/karakeep/compare/v1.1.5...v1.1.6) (2026-11-10)
 
 
