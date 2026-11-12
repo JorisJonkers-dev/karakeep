@@ -1,5 +1,12 @@
 # Changelog
 
+## [1.1.8](https://github.com/JorisJonkers-dev/karakeep/compare/v1.1.7...v1.1.8) (2026-11-12)
+
+
+### Bug Fixes
+
+* **hygiene:** never cancel a run of the required hygiene checks ([#44](https://github.com/JorisJonkers-dev/karakeep/issues/44)) ([34bab48](https://github.com/JorisJonkers-dev/karakeep/commit/34bab48c7b9be544fb9db7a3b3a259eb576309b5))
+
 ## [1.1.7](https://github.com/JorisJonkers-dev/karakeep/compare/v1.1.6...v1.1.7) (2026-11-11)
 
 
