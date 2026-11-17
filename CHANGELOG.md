@@ -1,5 +1,12 @@
 # Changelog
 
+## [1.1.10](https://github.com/JorisJonkers-dev/karakeep/compare/v1.1.9...v1.1.10) (2026-11-17)
+
+
+### Bug Fixes
+
+* **ci:** cancel superseded runs and skip label events ([#47](https://github.com/JorisJonkers-dev/karakeep/issues/47)) ([51f35b8](https://github.com/JorisJonkers-dev/karakeep/commit/51f35b82206e10c9f3ecaa5bfa4e15df1b2b3ff6))
+
 ## [1.1.9](https://github.com/JorisJonkers-dev/karakeep/compare/v1.1.8...v1.1.9) (2026-11-17)
 
 
