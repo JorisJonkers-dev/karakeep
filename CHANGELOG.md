@@ -1,5 +1,13 @@
 # Changelog
 
+## [1.1.10](https://github.com/JorisJonkers-dev/karakeep/compare/v1.1.9...v1.1.10) (2026-11-27)
+
+
+### Bug Fixes
+
+* **ci:** cancel superseded runs and skip label events ([#47](https://github.com/JorisJonkers-dev/karakeep/issues/47)) ([51f35b8](https://github.com/JorisJonkers-dev/karakeep/commit/51f35b82206e10c9f3ecaa5bfa4e15df1b2b3ff6))
+* **deps:** update getmeili/meilisearch docker tag to v1.57.0 ([#52](https://github.com/JorisJonkers-dev/karakeep/issues/52)) ([8dac630](https://github.com/JorisJonkers-dev/karakeep/commit/8dac63053c285836fcda53b1189286f95422a6c4))
+
 ## [1.1.9](https://github.com/JorisJonkers-dev/karakeep/compare/v1.1.8...v1.1.9) (2026-11-17)
 
 
